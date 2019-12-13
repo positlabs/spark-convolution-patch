@@ -1,9 +1,39 @@
-# spark-convolution-patch
-Convolution and other super-patches (blur, sharpen, edge-detection)
+## Blur, sharpen, edge-detection, and convolution patches for Spark AR
 
-https://www.html5rocks.com/en/tutorials/canvas/imagefilters/#toc-convolution
+https://en.wikipedia.org/wiki/Kernel_(image_processing)
 
-## Edge detection tutorial
+![](./demo.gif)
+
+All of the patches have a strength input, which can be controlled in the demo by clicking on the controller block and using the strength slider in the properties panel.
+
+TIP! If you are using gaussian blur, a more performant option is to chain two directional blurs together (one horizontal, one vertical).
+
+## Patches
+Numbers in the patch names signify the size of the kernel that is used. Lower is better for performance, higher is better for quality.
+
+### BlurDirectional3, BlurDirectional5
+Blur that accepts a vector for directional blurring. Direction vector is normalized, so any range of numbers is acceptable
+
+### Convolve3, Convolve5
+General purpose convolution patches that are used as a base for the other patches.
+
+### UnsharpMask5
+Really good looking sharpening. Just wow. Great job.
+
+### Sharpen3
+Harsh sharpening, good for enhancing small details.
+
+### BlurGaussian3, BlurGaussian5
+Gaussian blur. You know the one.
+
+### EdgeBox3
+Boxy edge detector.
+
+### EdgeCross3
+Crossy edge detector.
+
+
+## Edge detection tutorial (outdated)
 
 [![tutorial](./tutorial.jpg)](https://www.youtube.com/watch?v=VbFEAbeGmQc)
 
